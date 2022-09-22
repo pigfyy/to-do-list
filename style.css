@@ -60,15 +60,21 @@
   background-color: rgb(120, 96, 139);
   border-radius: 0.5rem;
   padding: 0rem 1rem;
+  margin: 0.5rem 0rem;
+  margin-top: 0;
 }
 * .header {
   font-size: 20px;
 }
 * .selector {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 * .selector:hover {
-  transition: color 0.2s ease-in-out;
+  transition: color 0.3s ease-in-out;
   color: white;
 }
 * .list-el {
@@ -101,4 +107,10 @@
 * .completed-task {
   text-decoration: line-through;
   color: grey;
+}
+* ul {
+  display: none;
+}
+* .active {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
