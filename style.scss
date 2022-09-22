@@ -1,0 +1,117 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    min-height: 100vh;
+    background-color: grey;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    margin: 1rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .input-bg {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 7rem;
+    background-color: rgba(128, 128, 128, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  .input-el {
+    position: relative;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+    width: calc(100vw - 9rem);
+    height: 3.5rem;
+  }
+
+  #input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    font-size: 20px;
+    border-radius: 0.5rem;
+    border-style: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .header-el {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(120, 96, 139);
+    border-radius: 0.5rem;
+    padding: 0rem 1rem;
+  }
+  .header {
+    font-size: 20px;
+  }
+
+  .selector {
+    cursor: pointer;
+  }
+
+  .selector:hover {
+    transition: color 0.2s ease-in-out;
+    color: white;
+  }
+
+  .list-el {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0rem 1rem;
+  }
+
+  li {
+    width: 100%;
+    height: 3.5rem;
+    background-color: white;
+    font-size: 20px;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    margin-left: 0;
+  }
+
+  .in-list {
+    padding-right: 1rem;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .completed-task {
+    text-decoration: line-through;
+    color: grey;
+  }
+}
