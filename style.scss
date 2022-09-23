@@ -82,6 +82,18 @@
     color: white;
   }
 
+  .close:hover {
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .edit:hover {
+    color: green;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
   .list-el {
     display: flex;
     flex-direction: row;
@@ -92,6 +104,12 @@
     background-color: white;
     border-radius: 0.5rem;
     padding: 0rem 1rem;
+    justify-content: space-between;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
   }
 
   li {
