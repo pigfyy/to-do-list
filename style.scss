@@ -108,6 +108,7 @@
   .in-list {
     padding-right: 1rem;
     cursor: pointer;
+    user-select: none;
   }
 
   .completed-task {

@@ -4,6 +4,7 @@ const completedEl = document.querySelector(".completed");
 const completedSelectorEl = document.querySelector("#completed-selector");
 const incompleteSelectorEl = document.querySelector("#incomplete-selector");
 const inputEl = document.querySelector(".input");
+const spanEls = document.querySelectorAll("span.in-list.not-done");
 
 // helps collapse to-do and completed sections
 collapseEls();
@@ -31,6 +32,7 @@ function collapseEls() {
   });
 }
 
+// adds input to to-do list
 onTaskEnter();
 function onTaskEnter() {
   inputEl.addEventListener("keyup", (key) => {
@@ -53,11 +55,18 @@ function addTask(name, isToDo) {
   div.innerText = name;
 
   if (isToDo) {
+    span.classList.add("not-done");
     span.innerText = "radio_button_unchecked";
     div.classList.add("list-el-text");
     list.appendChild(span);
     list.appendChild(div);
     incompleteEl.appendChild(list);
+    span.addEventListener("click", (e) => {
+      const parent = span.parentElement;
+      const taskName = span.nextElementSibling.innerText;
+      parent.remove();
+      addTask(taskName, false);
+    });
   } else {
     span.innerText = "radio_button_checked";
     div.classList.add("list-el-text", "completed-task");
@@ -65,4 +74,16 @@ function addTask(name, isToDo) {
     list.appendChild(div);
     completedEl.appendChild(list);
   }
+}
+
+addListenerToSpans();
+function addListenerToSpans() {
+  spanEls.forEach((span) => {
+    span.addEventListener("click", (e) => {
+      const parent = span.parentElement;
+      const taskName = span.nextElementSibling.innerText;
+      parent.remove();
+      addTask(taskName, false);
+    });
+  });
 }

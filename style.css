@@ -101,6 +101,10 @@
 * .in-list {
   padding-right: 1rem;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 * .completed-task {
   text-decoration: line-through;
