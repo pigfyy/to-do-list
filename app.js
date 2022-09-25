@@ -17,7 +17,7 @@ if (JSON.parse(localStorage["incompleteNames"] || null) != null) {
 if (JSON.parse(localStorage["completedNames"] || null) != null) {
   completedNames = JSON.parse(localStorage["completedNames"] || null);
 } else {
-  completedNames = [4];
+  completedNames = [];
 }
 
 // runs at start of the script, reads all data
