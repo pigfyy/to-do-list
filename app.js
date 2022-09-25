@@ -104,16 +104,18 @@ function onTaskEnter() {
 
 // adds task to one of the lists, params: task name, isToDo or isCompleted
 function addTask(name, isToDo) {
-  const span = document.createElement("span");
+  if (isToDo === false) {
+  }
 
+  const span = document.createElement("span");
   span.classList.add("in-list", "material-symbols-outlined");
   if (isToDo === true) {
     span.classList.add("not-done");
-  }
-  if (isToDo === true) {
     span.innerText = "radio_button_unchecked";
   } else {
     span.innerText = "radio_button_checked";
+
+    span.classList.add("done-for-selector");
   }
   const div = document.createElement("div");
   div.classList.add("list-el-text");
@@ -158,10 +160,16 @@ function addTask(name, isToDo) {
     const parent = span.parentElement.parentElement;
     const taskName = span.nextElementSibling.innerText;
     parent.remove();
-    addTask(taskName, false);
-    incompleteNames.splice(incompleteNames.indexOf(taskName), 1);
+    if (span.classList.contains("done-for-selector")) {
+      addTask(taskName, true);
+      completedNames.splice(completedNames.indexOf(taskName), 1);
+      incompleteNames.push(taskName);
+    } else {
+      addTask(taskName, false);
+      incompleteNames.splice(incompleteNames.indexOf(taskName), 1);
+      completedNames.push(taskName);
+    }
     localStorage.setItem("incompleteNames", JSON.stringify(incompleteNames));
-    completedNames.push(taskName);
     localStorage.setItem("completedNames", JSON.stringify(completedNames));
   });
   span2.addEventListener("click", () => {
