@@ -98,6 +98,9 @@
   border-radius: 0.5rem;
   padding: 0rem 1rem;
   justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: hidden;
 }
 * .row {
   display: flex;
@@ -130,4 +133,10 @@
 }
 * .active {
   display: block;
+}
+* .list-el-text {
+  max-width: 1000px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
